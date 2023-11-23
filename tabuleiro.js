@@ -1,0 +1,3 @@
+function exemplo() {
+    let x;
+}
