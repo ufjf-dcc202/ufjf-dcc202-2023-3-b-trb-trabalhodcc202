@@ -9,7 +9,7 @@ let imagens = [
 
 let dados = document.querySelectorAll(".dado>img"); 
 
-function roll(){
+function rolaDado(){
     dados.forEach(function (dd) {
         dd.classList.add("shake");
     });
