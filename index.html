@@ -3,22 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trabalho DCC202: Rhara Ianna e Pedro Crawford</title>
     <link rel="stylesheet" href="style.css">
+    <script type="module" src="modal.js"></script>
+    <title>Document</title>
 </head>
 <body>
     <main>
-        <div class="tela">
-            <section >
-                <h2> Jogador 1</h2>
-                <p> Placar: </p>
-                <div class="dado"> 
-                    <img id="dd1" src="assets/dado1.png">
-                </div>
-                <button onclick="rolaDado()"> Jogar dado </button>
-            </section>
+        <img src="img/Group 4 (1).png">
+        <div class="center">
+            <button id="modalBtn1">História</button>
+            <a href="./jogo.html" > JOGAR</a>
+            <button id="modalBtn2"> Regras</button>
+        </div>
+        <div class="modal" id="modal1">
+            <div class="content">
+                <header>História</header>
+                <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit doloremque ea consequatur nisi. Beatae ullam vel unde necessitatibus quam incidunt consectetur illum nemo, qui architecto magni nihil laborum sit officia.</p>
+            </div>
+        </div>
+        <div class="modal" id="modal2">
+            <div class="content">
+                <header>Regras</header>
+                <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit doloremque ea consequatur nisi. Beatae ullam vel unde necessitatibus quam incidunt consectetur illum nemo, qui architecto magni nihil laborum sit officia.</p>
+            </div>
         </div>
     </main>
-    <script src="main.js"></script>
 </body>
 </html>
