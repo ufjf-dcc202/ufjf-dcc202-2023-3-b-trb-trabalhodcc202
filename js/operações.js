@@ -1,30 +1,42 @@
 // arrumar de 1 a 3
 let dado, colunas;
-let coluna1=[], coluna2=[], coluna3=[], jogador1=[], jogador2=[], jogador3=[];
+
 let somatt=0;
+
+vetor=[0,1,2];
 
 function sorteia(){
     dado = (Math.floor(Math.random() * 6)+1);
     return dado;
 } 
 
-function escolhe(){
-    colunas = (Math.floor(Math.random() * 3));
-    return colunas;
+function escolhe(ss){
+    colunas = (Math.floor(Math.random() * ss));
+    return vetor[colunas];
 }
 
-function colocaDadoNaColuna(){
-    let num = escolhe();
-    if (num==0 && coluna1.length<3) {
+function colocaDadoNaColuna(dado, x, coluna1, coluna2, coluna3){
+    
+    if(vetor.length==0){
+        return 3;/// falta criar
+    }
+    else if (x==vetor[0] && coluna1.length<3) {
         coluna1.push(dado);
+        return 0;
     }
-    else if (num==1 && coluna2.length<3){
+    else if (x==vetor[1] && coluna2.length<3){
         coluna2.push(dado);
+        return 1;
     }
-    else if (num==2 && coluna3.length<3){
+    else if (x==vetor[2] && coluna3.length<3){
         coluna3.push(dado);
+        return 2;
     }
-    else {}/// sortear dnv coluna
+    else {
+        vetor.slice(num, 1);
+        num = escolhe (vetor.length);
+        colocaDadoNaColuna(num);
+    }
 }
 
 function numRep(colunax){
@@ -47,6 +59,7 @@ function somaColuna(colunax){
 
 function placar(colunaA, colunaB, colunaC){
     somatt = somaColuna(colunaA) + somaColuna (colunaB) + somaColuna (colunaC);
+    return somatt;
 }
 
 function tiraDados (colunaAdv, novoDado) {
@@ -60,4 +73,5 @@ function tiraDados (colunaAdv, novoDado) {
     }
 }
 
-export {sorteia, colocaDadoNaColuna, placar, tiraDados}
+
+export {escolhe, sorteia, colocaDadoNaColuna, placar, tiraDados}
