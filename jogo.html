@@ -4,32 +4,33 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/jogo.css" />
+    <script type="module" src="js/jogatina.js"></script>
     <title>Document</title>
   </head>
   <body>
     <main>
       <section class="tabuleiros">
-        <div class="container">
-          <button id="btnjogo1">
+        <div class="container" id="jogador">
+          <button class="btnjogo">
             <div></div>
             <div></div>
             <div></div>
             <span>x</span>
           </button>
-          <button id="btnjogo2">
+          <button class="btnjogo">
             <div></div>
             <div></div>
             <div></div>
             <span>x</span>
           </button>
-          <button id="btnjogo3">
+          <button class="btnjogo">
             <div></div>
             <div></div>
             <div></div>
             <span>x</span>
           </button>
         </div>
-        <div class="container" style="pointer-events: none">
+        <div class="container" id="inimigo" style="pointer-events: none">
           <button>
             <span>x</span>
             <div></div>
@@ -65,4 +66,5 @@
       </section>
     </main>
   </body>
-</html>
+  </html>
+  
