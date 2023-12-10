@@ -3,16 +3,41 @@ let dado, colunas;
 
 let somatt=0;
 
-vetor=[0,1,2];
+let vetor=[0,1,2];
 
 function sorteia(){
-    dado = (Math.floor(Math.random() * 6)+1);
+    dado = Math.floor(Math.random() * 6) + 1;
     return dado;
 } 
 
 function escolhe(ss){
     colunas = (Math.floor(Math.random() * ss));
     return vetor[colunas];
+}
+
+function colocaDadoNaColunaJog(dadoJogador, colunaEscolha, coluna1, coluna2, coluna3){
+    switch(colunaEscolha){
+        case 0:
+            if(coluna1.length<3){
+                coluna1.push(dadoJogador);
+                return true;
+            }
+        case 1:
+            if(coluna2.length<3){
+                coluna2.push(dadoJogador);
+                return true;
+            }
+        case 2:
+            if(coluna3.length<3){
+                coluna3.push(dadoJogador);
+                return true;
+            }
+    }
+    return false;
+}
+
+function verificaFim(coluna1, coluna2, coluna3){
+    return coluna1.length>2 && coluna2.length>2 && coluna3.length>2;
 }
 
 function colocaDadoNaColuna(dado, x, coluna1, coluna2, coluna3){
@@ -33,9 +58,9 @@ function colocaDadoNaColuna(dado, x, coluna1, coluna2, coluna3){
         return 2;
     }
     else {
-        vetor.slice(num, 1);
-        num = escolhe (vetor.length);
-        colocaDadoNaColuna(num);
+        vetor.slice(x, 1);
+        x = escolhe (vetor.length);
+        return colocaDadoNaColuna(dado, x, coluna1, coluna2, coluna3);
     }
 }
 
@@ -62,16 +87,13 @@ function placar(colunaA, colunaB, colunaC){
     return somatt;
 }
 
-function tiraDados (colunaAdv, novoDado) {
-    const histAdv = numRep(colunaAdv);
-
-    for (let i=0; i<3; i++){
-        if (histAdv[novoDado-1] != 0) {
-        colunaAdv[i] = 0;
-        histAdv[novoDado-1] -= 1;
+function tiraDados (coluna, dado){
+    for(let i=coluna.length-1; i>=0 ;i--){
+        if(coluna[i]===dado){
+            coluna.splice(i,1);
         }
     }
 }
 
 
-export {escolhe, sorteia, colocaDadoNaColuna, placar, tiraDados}
+export {escolhe, sorteia, colocaDadoNaColuna,colocaDadoNaColunaJog, placar, tiraDados, verificaFim}
