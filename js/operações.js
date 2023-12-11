@@ -42,10 +42,7 @@ function verificaFim(coluna1, coluna2, coluna3){
 
 function colocaDadoNaColuna(dado, x, coluna1, coluna2, coluna3){
     
-    if(vetor.length==0){
-        return 3;/// falta criar
-    }
-    else if (x==vetor[0] && coluna1.length<3) {
+    if (x==vetor[0] && coluna1.length<3) {
         coluna1.push(dado);
         return 0;
     }
@@ -56,6 +53,9 @@ function colocaDadoNaColuna(dado, x, coluna1, coluna2, coluna3){
     else if (x==vetor[2] && coluna3.length<3){
         coluna3.push(dado);
         return 2;
+    }
+    else if(vetor.length==1){
+        return 3;
     }
     else {
         vetor.slice(x, 1);
