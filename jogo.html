@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/jogo.css" />
-    <script type="module" src="js/jogatina.js"></script>
+    <link rel="stylesheet" href="./css/dadoQueRola.css" />
+    <script type="module" src="js/jogatina.js" defer></script>
     <title>Document</title>
   </head>
   <body>
@@ -12,42 +13,42 @@
       <section class="tabuleiros">
         <div class="container" id="jogador">
           <button class="btnjogo">
-            <div></div>
-            <div></div>
-            <div></div>
-            <span>x</span>
+            <div data-livre></div>
+            <div data-livre=""></div>
+            <div data-livre=""></div>
+            <span>0</span>
           </button>
           <button class="btnjogo">
-            <div></div>
-            <div></div>
-            <div></div>
-            <span>x</span>
+            <div data-livre=""></div>
+            <div data-livre=""></div>
+            <div data-livre=""></div>
+            <span>0</span>
           </button>
           <button class="btnjogo">
-            <div></div>
-            <div></div>
-            <div></div>
-            <span>x</span>
+            <div data-livre=""></div>
+            <div data-livre=""></div>
+            <div data-livre=""></div>
+            <span >0</span>
           </button>
         </div>
         <div class="container" id="inimigo" style="pointer-events: none">
           <button>
-            <span>x</span>
-            <div></div>
-            <div></div>
-            <div></div>
+            <span>0</span>
+            <div data-livre ></div>
+            <div data-livre></div>
+            <div data-livre></div>
           </button>
           <button>
-            <span>x</span>
-            <div></div>
-            <div></div>
-            <div></div>
+            <span>0</span>
+            <div data-livre></div>
+            <div data-livre></div>
+            <div data-livre></div>
           </button>
           <button>
-            <span>x</span>
-            <div></div>
-            <div></div>
-            <div></div>
+            <span>0</span>
+            <div data-livre></div>
+            <div data-livre></div>
+            <div data-livre></div>
           </button>
         </div>
       </section>
@@ -55,16 +56,16 @@
         <div>
           <p>Jogador 1</p>
           <p>Placar:</p>
-          <img src="./assets/dado1.png" />
-          <button>Jogar</button>
+          <div class="dado">
+            <img id="dd1" src="assets/dado1.png" />
+          </div>
         </div>
         <div>
           <p>Computador</p>
           <p>Placar:</p>
-          <img src="./assets/dado1.png" />
+          <img id="dd2" src="./assets/dado1.png" />
         </div>
       </section>
     </main>
   </body>
-  </html>
-  
+</html>
