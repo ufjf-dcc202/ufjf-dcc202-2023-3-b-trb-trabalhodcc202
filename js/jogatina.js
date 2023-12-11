@@ -125,14 +125,30 @@ function finalizaJogo() {
   
   atualizaPlacar();
   if (placarJogador > placarComputador) {
-    let final = document.querySelector('#modalVitoria');
+
+    let final = document.querySelector("#modalVitoria");
+    const colocaPlacar = final.querySelectorAll("span");
+
     final.style.display = 'block';
+    colocaPlacar[0].textContent = placarJogador;
+    colocaPlacar[1].textContent = placarComputador;
+
   } else if (placarJogador < placarComputador) {
-    let final = document.querySelector('#modalDerrota');
+
+    let final = document.querySelector("#modalDerrota");
+    const colocaPlacar = final.querySelectorAll("span");
+
     final.style.display = 'block';
+    colocaPlacar[0].textContent = placarJogador;
+    colocaPlacar[1].textContent = placarComputador;
+
   } else {
-    let final = document.querySelector('#modalEmpate');
+
+    let final = document.querySelector("#modalEmpate");
+    const colocaPlacar = final.querySelectorAll("span");
+
     final.style.display = 'block';
+    colocaPlacar.textContent = placarJogador;
   }
 
 }
