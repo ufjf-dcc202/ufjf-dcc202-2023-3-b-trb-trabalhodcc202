@@ -69,11 +69,11 @@ function acaoJogador(colunax) {
   colocaImagem(imagens[dadoJogador - 1], colunax, "#jogador");
   if (testeColuna) {
     if (colunax == 0)
-      tiraDados(coluna1, dadoJogador, "#jogador", imagens[dadoJogador - 1]);
+      tiraDados(coluna1, dadoJogador, "#inimigo", imagens[dadoJogador - 1], colunax);
     else if (colunax == 1)
-      tiraDados(coluna2, dadoJogador, "#jogador", imagens[dadoJogador - 1]);
+      tiraDados(coluna2, dadoJogador, "#inimigo", imagens[dadoJogador - 1], colunax);
     else if (colunax == 2)
-      tiraDados(coluna3, dadoJogador, "#jogador", imagens[dadoJogador - 1]);
+      tiraDados(coluna3, dadoJogador, "#inimigo", imagens[dadoJogador - 1], colunax);
 
     atualizaPlacar();
     console.log("jogador: \n ");
@@ -94,11 +94,11 @@ function rodadaComputador() {
   let coluna = escolhe(3);
   let testeColuna = colocaDadoNaColuna(dado, coluna, coluna1, coluna2, coluna3);
   if (testeColuna == 0)
-    tiraDados(jogador1, dado, "#inimigo", imagens[dado - 1]);
+    tiraDados(jogador1, dado, "#jogador", imagens[dado - 1], testeColuna);
   else if (testeColuna == 1)
-    tiraDados(jogador2, dado, "#inimigo", imagens[dado - 1]);
+    tiraDados(jogador2, dado, "#jogador", imagens[dado - 1], testeColuna);
   else if (testeColuna == 2)
-    tiraDados(jogador3, dado, "#inimigo", imagens[dado - 1]);
+    tiraDados(jogador3, dado, "#jogador", imagens[dado - 1], testeColuna);
   else if (testeColuna == 3) finalizaJogo();
   atualizaPlacar();
   colocaImagem(imagens[dado - 1], coluna, "#inimigo");
