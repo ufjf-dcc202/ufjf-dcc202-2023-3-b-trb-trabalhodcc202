@@ -119,11 +119,14 @@ function atualizaPlacar() {
 function finalizaJogo() {
   atualizaPlacar();
   if (placarJogador > placarComputador) {
-    //jogador ganha
+    let final = document.querySelector(".vitoria");
+    final.style.display = 'block';
   } else if (placarJogador < placarComputador) {
-    //computador ganha
+    let final = document.querySelector(".derrota");
+    final.style.display = 'block';
   } else {
-    //empate
+    let final = document.querySelector(".empate");
+    final.style.display = 'block';
   }
 }
 
