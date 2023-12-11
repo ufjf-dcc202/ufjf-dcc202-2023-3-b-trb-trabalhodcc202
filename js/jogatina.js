@@ -40,6 +40,7 @@ for (let i = 0; i < escolheJogador.length; i++) {
 
 const colocanumeroJog = document.querySelectorAll("#jogador span");
 const colocanumeroIni = document.querySelectorAll("#inimigo span");
+const placarzao= document.querySelectorAll(".placar span");
 
 function placarColunas() {
   colocanumeroJog[0].textContent = somaColuna(jogador1);
@@ -108,8 +109,11 @@ function rodadaComputador() {
 
 function atualizaPlacar() {
   placarComputador = placar(coluna1, coluna2, coluna3);
+  placarzao[1].textContent = placarComputador;
   placarJogador = placar(jogador1, jogador2, jogador3);
+  placarzao[0].textContent =  placarJogador;
   placarColunas();
+
 }
 
 function finalizaJogo() {
