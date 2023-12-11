@@ -60,6 +60,8 @@ button:hover{
     width: 10vmax;
     margin: 10px;
     border-radius: 10px;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .container>button {
