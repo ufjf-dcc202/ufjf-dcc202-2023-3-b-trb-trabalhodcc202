@@ -1,3 +1,0 @@
-function exemplo() {
-    let x;
-}
