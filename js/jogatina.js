@@ -26,6 +26,8 @@ let coluna1 = [],
   jogador2 = [],
   jogador3 = [];
 
+
+
 let placarJogador, placarComputador, dadoJogador;
 dadoJogador = sorteia(); // 1. manda sortear um dado para o jogador
 
@@ -128,3 +130,5 @@ function colocaImagem(imagem, coluna, pessoa) {
   clicado[0].style.backgroundImage = `url("${imagem}")`;
   clicado[0].removeAttribute("data-livre");
 }
+
+
