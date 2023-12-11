@@ -87,13 +87,38 @@ function placar(colunaA, colunaB, colunaC){
     return somatt;
 }
 
-function tiraDados (coluna, dado){
+function tiraDados (coluna, dado, pessoa, imagem){
     for(let i=coluna.length-1; i>=0 ;i--){
         if(coluna[i]===dado){
             coluna.splice(i,1);
+            tiraImagem(imagem, coluna, pessoa);
         }
     }
 }
 
 
-export {escolhe, sorteia, colocaDadoNaColuna,colocaDadoNaColunaJog, placar, tiraDados, verificaFim}
+function rolaDado(imagens, valordd1, id){
+    let dados = document.querySelector(id)
+    dados.classList.add("shake");
+        setTimeout(function()
+            {
+                dados.classList.remove("shake");
+                dados.setAttribute("src",imagens[valordd1-1]);
+        },
+        1000
+        );
+};
+
+function tiraImagem(imagem, coluna, pessoa){
+    let clicado = document.querySelectorAll(`${pessoa} button:nth-of-type(${coluna+1}) div:not([data-livre])`);
+    for(let i=0; i<clicado.length;i++){
+        if(clicado[i].style.backgroundImage== `url("${imagem}")`){
+            clicado[i].style.backgroundImage = "none";
+            clicado[i].setAttribute("data-livre", "");
+        }
+    }
+}
+
+
+
+export {escolhe, sorteia, colocaDadoNaColuna,colocaDadoNaColunaJog, placar, tiraDados, verificaFim, somaColuna, rolaDado}
