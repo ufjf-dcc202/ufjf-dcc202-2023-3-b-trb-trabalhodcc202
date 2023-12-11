@@ -87,11 +87,11 @@ function placar(colunaA, colunaB, colunaC){
     return somatt;
 }
 
-function tiraDados (coluna, dado, pessoa, imagem){
+function tiraDados (coluna, dado, pessoa, imagem, indice){
     for(let i=coluna.length-1; i>=0 ;i--){
         if(coluna[i]===dado){
             coluna.splice(i,1);
-            tiraImagem(imagem, coluna, pessoa);
+            tiraImagem(imagem, indice, pessoa);
         }
     }
 }
@@ -109,10 +109,10 @@ function rolaDado(imagens, valordd1, id){
         );
 };
 
-function tiraImagem(imagem, coluna, pessoa){
-    let clicado = document.querySelectorAll(`${pessoa} button:nth-of-type(${coluna+1}) div:not([data-livre])`);
+function tiraImagem(imagem, indice, pessoa){
+    let clicado = document.querySelectorAll(`${pessoa} button:nth-of-type(${indice+1}) div:not([data-livre])`);
     for(let i=0; i<clicado.length;i++){
-        if(clicado[i].style.backgroundImage== `url("${imagem}")`){
+        if(clicado[i].style.backgroundImage=== `url("${imagem}")`){
             clicado[i].style.backgroundImage = "none";
             clicado[i].setAttribute("data-livre", "");
         }
