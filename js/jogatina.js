@@ -81,6 +81,7 @@ function acaoJogador(colunax) {
     console.log("inimigo: \n ");
     console.log(coluna1, coluna2, coluna3);
     if (verificaFim(jogador1, jogador2, jogador3)) {
+      finalizaJogo();
       console.log("finnnnnnn");
       return;
     }
@@ -99,9 +100,13 @@ function rodadaComputador() {
     tiraDados(jogador2, dado, "#jogador", imagens[dado - 1], testeColuna);
   else if (testeColuna == 2)
     tiraDados(jogador3, dado, "#jogador", imagens[dado - 1], testeColuna);
-  else if (testeColuna == 3) finalizaJogo();
+  if(verificaFim(coluna1, coluna2, coluna3)) {
+    finalizaJogo();
+    console.log("finnnnnnn");
+    return;
+  }
   atualizaPlacar();
-  colocaImagem(imagens[dado - 1], coluna, "#inimigo");
+  colocaImagem(imagens[dado - 1], testeColuna, "#inimigo");
 
   dadoJogador = sorteia();
   iniciar("#dd1", dadoJogador);
@@ -117,17 +122,19 @@ function atualizaPlacar() {
 }
 
 function finalizaJogo() {
+  
   atualizaPlacar();
   if (placarJogador > placarComputador) {
-    let final = document.querySelector(".vitoria");
+    let final = document.querySelector('#modalVitoria');
     final.style.display = 'block';
   } else if (placarJogador < placarComputador) {
-    let final = document.querySelector(".derrota");
+    let final = document.querySelector('#modalDerrota');
     final.style.display = 'block';
   } else {
-    let final = document.querySelector(".empate");
+    let final = document.querySelector('#modalEmpate');
     final.style.display = 'block';
   }
+
 }
 
 function colocaImagem(imagem, coluna, pessoa) {
